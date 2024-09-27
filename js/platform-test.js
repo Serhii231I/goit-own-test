@@ -346,4 +346,953 @@
 // }
 // console.log(calculateTax(100));
 
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4.7,
+//   price: 5000,
+//   tags: ["premium", "promoted", "top", "trusted"],
+//   owner: {
+//     name: "Henry Sibola",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+
+// apartment.location = {
+// country: "Jamaica",
+// city: "Kingston",
+// };
+// apartment.area = 60;
+// apartment.rooms = 3;
+// console.log(apartment);
+
+// const keys = [];
+// const values = [];
+
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// for(const i in apartment){
+//     console.log(i);
+//     console.log(apartment[i]);
+//     keys.push(i);
+//     values.push(apartment[i])
+  
+// }
+// console.log(keys);
+//     console.log(values);
+
+// --------------------------------Метод Object.keys()--------------------------------
+// Перебери об'єкт apartment, використовуючи метод Object.keys() і цикл for...of.
+// Запиши у змінну keys масив ключів властивостей об'єкта apartment,
+//  і додай в масив values всі значення його властивостей.
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// const keys = Object.keys(apartment);
+// for (const key of keys) {
+//    values.push(apartment[key]);
+// }
+// console.log(values);
+// Виконай рефакторинг функції countProps(object), замінивши перебір ключів за
+// допомогою циклу for…in на метод Object.keys() для отримання масиву властивостей.
+//  Функція має повернути кількість властивостей в об'єкті object.
+
+
+// function countProps(object) {
+//   const keys = Object.keys(object);
+  
+//   return Object.keys(object).length;
+
+
+// }
+ 
+
+// console.log(countProps({}));
+
+
+// -----------------------------Метод Object.values()----------------------------
+
+// Запиши у змінну keys масив ключів властивостей об'єкта apartment, а у змінну values - масив їх значень.
+//  Використовуй методи Object.keys() і Object.values().
+
+//  const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+
+// const keys = Object.keys(apartment);
+// const values = Object.values(apartment);
+
+// Функція countTotalSalary(salaries) приймає об'єкт зарплат (salaries) в якості параметра.
+// Кожна властивість об'єкта salaries — це ключ, що містить ім'я співробітника, та значення - його відповідна зарплатня.
+
+// Доповни код функції countTotalSalary(salaries) так, щоб вона повертала загальну суму зарплат всіх співробітників.
+
+// Поради:
+
+// Ініціалізуй змінну totalSalary зі значенням 0, яка буде відповідати за загальну суму зарплат усіх співробітників
+// Використай метод Object.values() для отримання значень (зарплат) з об'єкта salaries
+// Пройдись по отриманих значеннях за допомогою циклу та додай кожне значення до змінної totalSalary.
+// Поверни totalSalary як результат
+
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   const sal = Object.values(salaries);
+//   for (let value of sal) {
+//     console.log(value);
+    
+//     totalSalary+=value;
+//   }
+//   return totalSalary;
+// }
+// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+
+
+// --------------------------------------Масив об’єктів------------------------------------
+
+// Масив colors містить колекцію кольорів.
+// Кожен колір представлений об'єктом і має властивості hex і rgb з відповідними для цього формату і кольору значеннями.
+
+// Перебери масив об'єктів colors, використовуючи цикл for...of.
+// Додай у масив hexColors значення властивостей hex,
+//     а в масив rgbColors - значення властивостей rgb з усіх об'єктів масиву colors.
+
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+// const hexColors = [];
+// const rgbColors = [];
+// for(const hexs of colors){
+//     hexColors.push(hexs.hex);
+// }
+// for (const rgbs of colors) {
+//     rgbColors.push(rgbs.rgb)
+// }
+// console.log(hexColors);
+// console.log(rgbColors);
+
+// ---------------------------------------Пошук об'єкта за значенням властивості-----------------------------------
+// Функція getProductPrice(productName) приймає один параметр productName - назва продукту.
+// Функція містить масив об'єктів products з такими властивостями, як name — ім'я товару, price — ціна і quantity — кількість.
+
+// Доповни код функції так, щоб вона шукала об'єкт продукту з певним ім'ям(властивість name) в масиві products
+//  і повертала його ціну(властивість price).Якщо продукт з такою назвою не знайдений, функція повинна повертати null.
+
+// function getProductPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//     for (const item of products) {
+//     //   console.log(item.name);
+//     //   console.log(item.price);
+      
+//     if(item.name === productName){
+//       return item.price;
+      
+//         }
+//   }
+// }
+
+// console.log(getProductPrice("Engine"));
+
+// --------------------------------------------Колекція значень властивості-------------------------------
+
+// Напиши функцію getAllPropValues(propName), яка приймає один параметр propName - ім'я (ключ) властивості.
+// Функція повинна повернути масив усіх значень властивості з таким ім'ям з кожного об'єкта в масиві products.
+// Якщо в об'єктах відсутні властивості з таким ім'ям, функція повинна повернути порожній масив.
+
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+//   const a = [];
+//   for(const item of products){
+//         // console.log(name);
+//     //   console.log(item);
+      
+//     //   console.log(item.price);
+//     //   console.log(item.quantity);
+//     if(propName === "name"){
+//         a.push(item.name);
+//     //   console.log(item.name);
+//     }
+//     else if(propName === "price"){
+//       a.push(item.price);
+//   }
+//     else if(propName === "quantity"){
+//       a.push(item.quantity);
+// }
+//     }
+//     return a;
+// }
+// console.log(getAllPropValues("quantiasdty"));
+
+// Функція calculateTotalPrice(productName) приймає один параметр productName - назва товару.
+// Функція містить масив об'єктів products з такими властивостями, як name — ім'я товару, price — ціна і quantity — кількість.
+
+// Доповни код функції так, щоб вона повертала загальну вартість (ціна * кількість) товару з таким ім'ям з масиву products.
+
+// Якщо продукту з такою назвою немає,
+//     то функція повинна повертати рядок "Product <productName> not found!", де < productName > — це ім'я товару.
+
+// function calculateTotalPrice(productName) {
+//     const products = [
+//         { name: "Radar", price: 1300, quantity: 4 },
+//         { name: "Scanner", price: 2700, quantity: 3 },
+//         { name: "Droid", price: 400, quantity: 7 },
+//         { name: "Grip", price: 1200, quantity: 9 },
+//     ];
+//     let sum;
+//     for (const product of products) {
+//         // console.log(product.name);
+      
+//         if (product.name === productName) {
+//                 sum = product.price*product.quantity
+//                 return `${productName} ${sum}`;
+//             }
+//     }
+//     return `"Product ${productName} not found!"`
+//     }
+
+// console.log(calculateTotalPrice("dsg"));
+
+// const atTheOldToad = {
+//   potions : [],
+//   getPotions(){
+//     return "List of all available potions";
+//     },
+//     addPotion(potionName) {
+//   return `Adding ${potionName}`;
+// }
+// }
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion("Invisibility"));
+// console.log(atTheOldToad.addPotion("Power potion"));
+
+// // atTheOldToad.getPotions();
+// // atTheOldToad.addPotion("Invisibility");
+// // atTheOldToad.addPotion("Power potion") // повертає рядок "Adding Power potion";
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Stone skin"],
+//   getPotions() {
+//     return this.potions;
+//   },
+// };
+// console.log(atTheOldToad.getPotions());
+
+// function add(...num) {
+//     let result = 0;
+//     for (const number of num) {
+//         result += number;
+//     }
+//     return result;
+// }
+// console.log(add(12, 4, 11, 48));
+
+// function addOverNum(value, ...args ) {
+//   let total = 0;
+//   for(const number of args){
+//     if(value<number){
+//       total+=number;
+      
+//     }
+// }
+// return total;
+// }
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+
+// function getExtremeScores(scores) {
+//   return `{best: ${Math.max(...scores)}, worst: ${Math.min(...scores)}}`;
+// }
+// console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));
+
+// function getExtremeScores(scores) {
+//   let a = Math.max(...scores);
+//   let b = Math.min(...scores)
+//   return `best: ${a}, worst: ${b}`;
+// }
+// console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+// console.log(makeMessage("Ultracheese", deliverPizza));
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//     console.log(`Delivering pizza ${pizzaName}`);
+// });
+
+// makePizza("Ultracheese", function eatPizza(pizzaName) {
+//     console.log(`Eating pizza ${pizzaName}`)
+// });
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (number){
+//         totalPrice+=number;
+//   });
+
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// function filterArray(numbers, value) {
+
+//   const newArray = [];
+//   numbers.forEach(function (number) {
+//     if(number>value){
+//       newArray.push(number);
+//     }
+//   });
+//   return newArray;
+// }console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// const calculateTotalPrice = (orderedItems) => {
+    
+//     let totalPrice = 0;
+//     const a = (item) =>
+//         totalPrice += item;
+    
+//     orderedItems.forEach(a);
+//     return totalPrice;
+// };
+// console.log(calculateTotalPrice([164, 48, 291]));
+
+// ------------------------------------------- Методи map і flatMap-----------------------------------
+    // ----------------------------------------Чисті функції--------------------------------
+
+
+// Функція changeEven(numbers, value) приймає масив чисел numbers і оновлює кожен елемент,
+//     значення якого - це парне число, додаючи до нього значення параметра value, який точно є числом.
+
+// Виконай рефакторинг функції таким чином, щоб вона стала чистою - не змінювала масив чисел numbers,
+//     а створювала, наповнювала і повертала новий масив з оновленими значеннями.
+// function changeEven(numbers, value) {
+//   const newArray = [];
+//     for (let i = 0; i < numbers.length; i += 1) {
+//       if (numbers[i] % 2 === 0) {
+//           newArray.push(numbers[i] + value)
+//         }
+//       else {
+//           newArray.push(numbers[i]);
+//         }
+// }
+// return newArray;
+// }
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
+
+// -------------------------------------Метод map()------------------------
+
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+// const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
+// console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
+
+// const planetsInLowerCase = planets.map(planet => planet.toLowerCase());
+// console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
+
+// Оригінальний масив не змінився
+// console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
+
+// В масиві planets зберігаються назви планет.Доповни код таким чином, щоб у змінній planetsLengths вийшов масив,
+//     що буде складатися з довжин назв кожної планети з масиву planets.Обов'язково використовуй метод map().
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+
+// const planetsLengths = planets.map(planet=> planet.length);
+// console.log(planetsLengths);
+
+// -------------------------------------------Масив об'єктів----------------------------------
+
+// Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating.
+// Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв усіх книг(властивість title) з масиву books.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const titles = books.map(book => book.title);
+
+
+// -------------------------------------Метод flatMap()--------------------------------------------------------
+    // Масив books містить колекцію об'єктів книг, кожен з яких містить властивість genres, значенням якої є масив жанрів. 
+    // Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив жанрів усіх книг(властивість genres) з масиву books.
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+
+// const genres = books.flatMap(book=> book.genres);
+
+// Доповни стрілочну функцію getUserEmails(users) таким чином,
+//     щоб вона повертала масив поштових адрес користувачів(властивість email) з масиву об'єктів в параметрі users.
+
+// const getUserEmails = (users) => {
+//     const getEmails = users.map(user => user.email);
+//     console.log(getEmails);
+//     return getEmails;
+// };
+// console.log(getUserEmails([
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ]));
+// ----------------------------------------FILTER()-----------------------------------
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter(number => number %2===0);
+// const oddNumbers = numbers.filter(number => number %2!=0);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+// ------------------------------------------------Метод reduce()------------------------------------------
+
+// Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх, одним гравцем. 
+// У змінній players зберігається об'єкт, де ключ це ім'я гравця, а значення - його ігровий час.
+// У змінній playtimes зберігається масив значень об'єкта players, тобто масив ігрового часу усіх гравців. 
+// Значенням змінної averagePlayTime буде середній час, проведений одним гравцем в іграх.
+
+// Доповни код таким чином, щоб у змінній totalPlayTime вийшов загальний ігровий час з масиву playtimes. Використовуй метод reduce().
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+
+// const totalPlayTime = playtimes.reduce((previousValue, number)=> {
+//   return previousValue + number;
+// }, 0);
+
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+// console.log(averagePlayTime);
+
+// У змінній players зберігається масив об'єктів, кожен з яких має властивості name, playtime та gamesPlayed.
+
+// Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця,
+//     і отримати загальну суму цих значень часу у змінній totalAveragePlaytimePerGame.
+//     Розрахувати час для кожного з гравців можна, розділивши його час(властивість playtime) на кількість ігор(властивість gamesPlayed).
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, pleyer)=>{
+//  return acc += pleyer.playtime / pleyer.gamesPlayed
+   
+// }, 0);
+
+// console.log(totalAveragePlaytimePerGame);
+
+// const calculateTotalBalance = (users) => {
+//     const totalBalance = users.reduce((acc, user) => acc + user.balance, 0);
+//     return totalBalance;
+// }
+//     console.log(calculateTotalBalance([
+//         {
+//             name: "Moore Hensley",
+//             email: "moorehensley@indexia.com",
+//             eyeColor: "blue",
+//             friends: ["Sharron Pace"],
+//             isActive: false,
+//             balance: 2811,
+//             gender: "male"
+//         },
+//         {
+//             name: "Sharlene Bush",
+//             email: "sharlenebush@tubesys.com",
+//             eyeColor: "blue",
+//             friends: ["Briana Decker", "Sharron Pace"],
+//             isActive: true,
+//             balance: 3821,
+//             gender: "female"
+//         },
+//         {
+//             name: "Ross Vazquez",
+//             email: "rossvazquez@xinware.com",
+//             eyeColor: "green",
+//             friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//             isActive: false,
+//             balance: 3793,
+//             gender: "male"
+//         },
+//         {
+//             name: "Elma Head",
+//             email: "elmahead@omatom.com",
+//             eyeColor: "green",
+//             friends: ["Goldie Gentry", "Aisha Tran"],
+//             isActive: true,
+//             balance: 2278,
+//             gender: "female"
+//         },
+//         {
+//             name: "Carey Barr",
+//             email: "careybarr@nurali.com",
+//             eyeColor: "blue",
+//             friends: ["Jordan Sampson", "Eddie Strong"],
+//             isActive: true,
+//             balance: 3951,
+//             gender: "male"
+//         },
+//         {
+//             name: "Blackburn Dotson",
+//             email: "blackburndotson@furnigeer.com",
+//             eyeColor: "brown",
+//             friends: ["Jacklyn Lucas", "Linda Chapman"],
+//             isActive: false,
+//             balance: 1498,
+//             gender: "male"
+//         },
+//         {
+//             name: "Sheree Anthony",
+//             email: "shereeanthony@kog.com",
+//             eyeColor: "brown",
+//             friends: ["Goldie Gentry", "Briana Decker"],
+//             isActive: true,
+//             balance: 2764,
+//             gender: "female"
+//         }
+//     ]));
+
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     rating: 7.94,
+//   },
+//   {
+//     title: "Enemy of God",
+//     author: "Bernard Cornwell",
+//     rating: 8.67,
+//   },
+// ];
+
+// const sortedByAuthorName = books.toSorted((a,b)=>a.author.localeCompare(b.author));
+
+// const sortedByReversedAuthorName = books.toSorted((a,b)=>b.author.localeCompare(a.author));
+
+// const sortedByAscendingRating = books.toSorted((a,b)=>a.rating - b.rating);
+
+// const sortedByDescentingRating = books.toSorted((a, b) => b.rating - a.rating);
+// console.log(sortedByAuthorName);
+// console.log(sortedByReversedAuthorName);
+// console.log(sortedByAscendingRating);
+// console.log(sortedByDescentingRating);
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books.filter((rate)=>rate.rating>MIN_BOOK_RATING).map((authors)=>authors.author).toSorted((a,b)=>a.rating - b.rating);
+// console.log(names);
+
+// const pizzaPalace = {
+//   pizzas: ["Supercheese", "Smoked", "Four meats"],
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+    
+//   },
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
+
+//     if (!isPizzaAvailable) {
+//       return `Sorry, there is no pizza named «${pizzaName}»`;
+//     }
+
+//     return `Order accepted, preparing «${pizzaName}» pizza`;
+//   },
+// };
+
+// console.log(pizzaPalace.order("Smoked"));
+
+// function greet(str) {
+//   console.log(`${str}, ${this.username}, your room is ${this.room}!`);
+// }
+
+// const mango = {
+//   username: "Mango",
+// 	room: 27
+// };
+
+// const poly = {
+//   username: "Poly",
+// 	room: 191
+// };
+
+// greet.call(mango, "Aloha"); // "Welcome, Mango, your room is 27!"
+// greet.call(poly, "Welcome"); // "Aloha, Poly, your room is 191!"
+
+
+// class Car {
+//   constructor(brand, model, price){
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+// }
+// const a = new Car();
+// console.log(new Car("Nissan","Murano", 31700));
+
+// class Car {
+//   constructor(params) {
+//     this.brand = params.brand;
+//     this.model = params.model;
+//     this.price = params.price;
+//   }
+// }
+// const a = new Car({}
+// //   brand : "Audi",
+// //     model : "Q3",
+// //     price : 36000
+// );
+// console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }));
+
+// class Car {
+//   #brand;
+//   constructor(params) {
+//     this.#brand = params.brand;
+//     this.model = params.model;
+//     this.price = params.price;
+//   }
+
+//   getPrice() {
+//     return this.price;
+//   }
+
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+//   getBrand() {
+//     return this.#brand;
+//   }
+
+//   changeBrand(newBrand) {
+//     this.#brand  = newBrand;
+//   }
+// }
+// console.log(new Car({ brand: "Nissan", model: "Murano", price: 31700 }));
+
+// class Car {
+//   static maxPrice = 50000;
+//   #price;
+
+//   constructor(params) {
+//     this.#price = params.price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+
+//     if (newPrice <= Car.maxPrice) {
+//       this.#price = newPrice;
+//     console.log(newPrice);
+      
+      
+//     }
+    
+//   }
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// class Car {
+//   static #maxPrice = 50000;
+// static checkPrice(price){
+//   if(price < Car.#maxPrice){
+//     return "Success! Price is within acceptable limits";
+//   }
+//   return "Error! Price exceeds the maximum";
+// }
+//   constructor(params) {
+//     this.price = params.price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+//   constructor(params){
+//     super(params.email);
+//     this.access = params.access
+    
+    
+//   }
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+    
+//   };
+
+//   constructor(params) {
+//     super(params.email);
+//     this.access = params.access;
+//     this.blacklistedEmails = params.blacklistedEmails;
+//   }
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
+//   isBlacklisted(email) {
+//     if (this.blacklistedEmails.includes(email)) {
+//       return true;
+//     }
+//     return false;
+//   }
+
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+//   blacklistedEmails : [],
+// });
+// console.log(mango);
+
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
 
